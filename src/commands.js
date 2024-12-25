@@ -13,6 +13,10 @@ export const runTest = ({ path }) => {
       console.error(`Ошибка: ${error.message}`);
       process.exit(1);
     }
+    if (stderr) {
+      console.error(`Ошибка: ${stderr}`);
+      process.exit(1);
+    }
     console.log(stdout);
   });
 };
